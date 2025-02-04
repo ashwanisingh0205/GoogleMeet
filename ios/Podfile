@@ -11,7 +11,7 @@
 # Use it to require both react-native's and this package's scripts:
  node_require('react-native/scripts/react_native_pods.rb')
  node_require('react-native-permissions/scripts/setup.rb') 
-
+# pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
  setup_permissions([
    'Camera',
    'MediaLibrary',
@@ -31,6 +31,10 @@ end
 
 target 'GoogleMeet' do
   config = use_native_modules!
+   
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
+
 
   use_react_native!(
     :path => config[:reactNativePath],

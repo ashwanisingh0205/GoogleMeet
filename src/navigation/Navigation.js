@@ -8,10 +8,12 @@ import Homescreen from '../screens/Homescreen'
 import Joinmeetscreen from '../screens/Joinmeetscreen'
 import Preparemeetscreen from '../screens/Preparemeetscreen'
 import Livemeetscreen from '../screens/Livemeetscreen'
+import { WSprovider } from '../service/api/WSprovider'
 
 const Navigation = () => {
     const Stack=createNativeStackNavigator()
   return (
+    <WSprovider>
   <NavigationContainer ref={navigationRef}>
     <Stack.Navigator initialRouteName='Splashscreen' screenOptions={{headerShown:false}}>
         <Stack.Screen name='Splashscreen' component={Splashscreen}/>
@@ -22,8 +24,9 @@ const Navigation = () => {
     </Stack.Navigator>
 
   </NavigationContainer>
-  )
-}
+   </WSprovider>
+  );
+};
 
 export default Navigation
 

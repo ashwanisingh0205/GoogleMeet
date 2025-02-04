@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-GoogleMeet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-GoogleMeet.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		58E3EF8E38A8473EA3635119 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D85A2D14B25343CCA111DAB4 /* Roboto-Medium.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
+		7C7DE9180F2C43C28D293A70 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 379C2C954D4D4C78B0AD1909 /* OpenSans-Bold.ttf */; };
 		811E6CF6F8F4F2959A10696E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		7C7DE9180F2C43C28D293A70 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 379C2C954D4D4C78B0AD1909 /* OpenSans-Bold.ttf */; };
-		EBB097F2B06345BF8D23418E /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB58C2A45B3848E5AACB81B6 /* OpenSans-Medium.ttf */; };
+		902B65FF3A3D46E8BC3BEB2B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE1EEEC11DB9416F9DD80479 /* Roboto-Regular.ttf */; };
 		A57DE67F8304447DA7624180 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D0AEDA233A4EDBBED2E4C1 /* OpenSans-Regular.ttf */; };
 		E1CAEE74DEE64DB0A91F3683 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB64457FF3B45DD8AF22EA6 /* OpenSans-SemiBold.ttf */; };
-		58E3EF8E38A8473EA3635119 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D85A2D14B25343CCA111DAB4 /* Roboto-Medium.ttf */; };
-		902B65FF3A3D46E8BC3BEB2B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE1EEEC11DB9416F9DD80479 /* Roboto-Regular.ttf */; };
+		EBB097F2B06345BF8D23418E /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB58C2A45B3848E5AACB81B6 /* OpenSans-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,18 +25,18 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GoogleMeet/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GoogleMeet/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = GoogleMeet/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1DB64457FF3B45DD8AF22EA6 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		379C2C954D4D4C78B0AD1909 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-GoogleMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMeet.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMeet/Pods-GoogleMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-GoogleMeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMeet.release.xcconfig"; path = "Target Support Files/Pods-GoogleMeet/Pods-GoogleMeet.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-GoogleMeet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleMeet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = GoogleMeet/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GoogleMeet/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE1EEEC11DB9416F9DD80479 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C4D0AEDA233A4EDBBED2E4C1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		D85A2D14B25343CCA111DAB4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		EB58C2A45B3848E5AACB81B6 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Medium.ttf"; path = "../src/assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		379C2C954D4D4C78B0AD1909 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EB58C2A45B3848E5AACB81B6 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; name = "OpenSans-Medium.ttf"; path = "../src/assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C4D0AEDA233A4EDBBED2E4C1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1DB64457FF3B45DD8AF22EA6 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D85A2D14B25343CCA111DAB4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BE1EEEC11DB9416F9DD80479 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05B4D931BB4144D883B61775 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				379C2C954D4D4C78B0AD1909 /* OpenSans-Bold.ttf */,
+				EB58C2A45B3848E5AACB81B6 /* OpenSans-Medium.ttf */,
+				C4D0AEDA233A4EDBBED2E4C1 /* OpenSans-Regular.ttf */,
+				1DB64457FF3B45DD8AF22EA6 /* OpenSans-SemiBold.ttf */,
+				D85A2D14B25343CCA111DAB4 /* Roboto-Medium.ttf */,
+				BE1EEEC11DB9416F9DD80479 /* Roboto-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* GoogleMeet */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,20 +123,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		05B4D931BB4144D883B61775 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				379C2C954D4D4C78B0AD1909 /* OpenSans-Bold.ttf */,
-				EB58C2A45B3848E5AACB81B6 /* OpenSans-Medium.ttf */,
-				C4D0AEDA233A4EDBBED2E4C1 /* OpenSans-Regular.ttf */,
-				1DB64457FF3B45DD8AF22EA6 /* OpenSans-SemiBold.ttf */,
-				D85A2D14B25343CCA111DAB4 /* Roboto-Medium.ttf */,
-				BE1EEEC11DB9416F9DD80479 /* Roboto-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -293,6 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5Q9V6Z92G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoogleMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -321,6 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5Q9V6Z92G;
 				INFOPLIST_FILE = GoogleMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -409,10 +410,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -481,10 +479,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
