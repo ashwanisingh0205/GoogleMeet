@@ -10,6 +10,7 @@ export const inquiryStyles = StyleSheet.create({
     },
     keyboardAvoidingView: {
       flex: 1,
+      justifyContent:'flex-end',
     },
     scrollViewContent: {
       flexGrow: 1,
