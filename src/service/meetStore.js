@@ -12,33 +12,33 @@ import { ToggleLeft } from 'lucide-react-native';
             micOn:false,
             videoOn:false,
 
-            addSessionId:id=>{
-                set({sessionId:id});
+            addSessionId:id=>{  //this function is used to add the session ID
+                set({sessionId:id});  //this function is used to set the session ID
             },
             removeSessionId:id=>{
-                set({sessionId:null});
+                set({sessionId:null});  //this function is used to remove the session ID
             },
-            addParticipant:participant=>{
-                const {participants}=get();
-                if(!participants.find(p=>p.userId===participant?.userId)){
-                    set({participants:[...participants,participant]})
+            addParticipant:participant=>{  //this function is used to add the participant
+                const {participants}=get();  //this function is used to get the participants
+                if(!participants.find(p=>p.userId===participant?.userId)){  //this function is used to check if the participant is already in the participants array
+                    set({participants:[...participants,participant]})  //this function is used to add the participant to the participants array
 
                 }
 
             },
-            removeParticipant:participantId=>{
-                const {participants}=get();
-                set({participants:participants.filter(p=>p.userId!==participantId)})
+            removeParticipant:participantId=>{  //this function is used to remove the participant
+                const {participants}=get();  //this function is used to get the participants
+                set({participants:participants.filter(p=>p.userId!==participantId)})  //this function is used to remove the participant from the participants array
             },
-            updateParticipant:updateParticipant=>{
-                const {participants}=get();
+            updateParticipant:updateParticipant=>{  //this function is used to update the participant
+                const {participants}=get();  //this function is used to get the participants
                 set({
-                    participants:participants.map(p=>
-                        p.userId===updateParticipant.userId
+                    participants:participants.map(p=> 
+                        p.userId===updateParticipant.userId  //this function is used to check if the participant ID is the same as the participant ID
                         ?{
                             ...p,
-                            micOn:updateParticipant.micOn,
-                            videoOn:updateParticipant.videoOn,
+                            micOn:updateParticipant.micOn,   //this function is used to update the mic on
+                            videoOn:updateParticipant.videoOn,  //this function is used to update the video on
 
                         }
                         :p,
@@ -46,11 +46,11 @@ import { ToggleLeft } from 'lucide-react-native';
                 })
 
             },
-            setStreamURL:(participantId, streamURL)=>{
-                const {participants} = get ();
-                const updatedParticipants = participants.map (p => {
-                if (p.userId === participantId) {
-                return {...p, streamURL};
+            setStreamURL:(participantId, streamURL)=>{   //this function is used to set the stream URL for the participant
+                const {participants} = get ();  //this function is used to get the participants
+                const updatedParticipants = participants.map (p => {  //this function is used to update the participants
+                if (p.userId === participantId) {  //this function is used to check if the participant ID is the same as the participant ID
+                return {...p, streamURL};  //this function is used to return the participant with the stream URL
                 }
                 return p;
             }
@@ -62,20 +62,20 @@ import { ToggleLeft } from 'lucide-react-native';
                 
         },
         toggle:type=>{
-            if(type==='mic'){
-                set(state=>({micOn:!state.micOn}))
+            if(type==='mic'){  //this function is used to toggle the mic on
+                set(state=>({micOn:!state.micOn}))  //this function is used to toggle the mic on
                 // Empty if block without trailing spaces
-            }else if(type==='video'){
-                set(state=>({videoOn:!state.videoOn}))
+            }else if(type==='video'){  //this function is used to toggle the video on
+                set(state=>({videoOn:!state.videoOn}))  //this function is used to toggle the video on
             }
         },
-        clear: () => {
+        clear: () => {  //this function is used to clear the store
             set({
-                sessionId: null,
-                participants: [],
-                chatMessages: [],
-                micOn: false,
-                videoOn: false,
+                sessionId: null,  //this function is used to set the session ID to null
+                participants: [],  //this function is used to set the participants to an empty array
+                chatMessages: [],  //this function is used to set the chat messages to an empty array
+                micOn: false,  //this function is used to set the mic on to false
+                videoOn: false,  //this function is used to set the video on to false
             })
         }
     }),

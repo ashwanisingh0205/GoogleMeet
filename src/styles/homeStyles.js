@@ -26,11 +26,12 @@ export const homeStyles = StyleSheet.create({
     },
     img: {
       width: screenWidth * 0.5,
-      height: screenHeight * 0.3,
+      height: screenHeight * 0.2,
       resizeMode: 'contain',
       alignSelf: 'center',
       margin: 15,
-      marginTop: screenHeight * 0.1,
+      marginTop: screenHeight * 0.2,
+      // borderRadius: 90,
     },
     buttonText: {
       color: '#fff',

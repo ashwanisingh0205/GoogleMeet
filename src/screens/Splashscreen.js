@@ -1,13 +1,13 @@
 import { Button, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect,useState } from 'react'
 import { screenHeight, screenWidth } from '../utils/Constants'
-import { navigate, resetAndNavigate } from '../utils/NavigationUtils'
+import { navigate, push, resetAndNavigate } from '../utils/NavigationUtils'
 
 const Splashscreen = () => {
 
   useEffect(()=>{
   const timer=setTimeout(() => {
-    navigate('Homescreen')
+    resetAndNavigate('Homescreen')
     return()=>clearTimeout(timer)
   },1000);
   },[])

@@ -75,9 +75,10 @@ const {addSessionId,removeSessionId}=LiveStore();
       data={sessions}
       renderItem={rendersession}
       key={item=>item}
-      contentContainerStyle={{padding:20}}
+      contentContainerStyle={{paddingVertical:20}}
       ListEmptyComponent={
         <>
+        {/* <Image source={require('../assets/images/meenakshi.png')} style={homeStyles.img}/> */}
         <Image source={require('../assets/images/bg.png')} style={homeStyles.img}/>
         
         <Text style={homeStyles.title}>Meeting calls for All</Text>
@@ -86,7 +87,7 @@ const {addSessionId,removeSessionId}=LiveStore();
       }/>
       <TouchableOpacity style={homeStyles.absoluteButton} onPress={handled}>
         <Video size={RFValue(20)} color='#fff'/>
-        <Text style={homeStyles.buttonText}>Join</Text>
+        <Text style={homeStyles.buttonText}> join</Text>
        
       </TouchableOpacity>
     </View>

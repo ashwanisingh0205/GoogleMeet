@@ -17,6 +17,7 @@ const InquiryModal = ({visible,onclose}) => {
       setName(storename || '');
       setProfile(storeprofilepic || '');
     }
+    
   },[visible]);
   const handlesave = ()=>{
     if(name && profile){

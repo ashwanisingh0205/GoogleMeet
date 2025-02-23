@@ -126,4 +126,19 @@ export const prepareStyles = StyleSheet.create({
     width: '80%',
     textAlign: 'left',
   },
+  linkHeader: {
+    fontFamily: 'Roboto-Medium',
+    fontSize: RFValue(12),
+    width: '80%',
+    textAlign: 'left',
+  },
+  linkText: {
+    fontFamily: 'Roboto-Regular',
+    fontSize: RFValue(12),
+    width: '80%',
+    textAlign: 'left',
+    color: '#0096FF'
+  },
+  
+  
 });

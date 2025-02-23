@@ -51,10 +51,12 @@ export const joinStyles = StyleSheet.create({
       marginTop: 20,
     },
     labelText: {
-      fontSize: RFValue(12),
+      fontSize: RFValue(14),
       color: '#333',
       marginBottom: 5,
+      
       fontFamily: 'OpenSans-Regular',
+      // textAlign: 'center',
     },
     inputBox: {
       borderWidth: 1,
