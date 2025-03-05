@@ -6,7 +6,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 
 export const inviteStyles = StyleSheet.create({
     container: {
-      flex: 0.7,
+      flex: 1,
       justifyContent: 'center',
       backgroundColor: '#121212',
       alignItems: 'flex-start',

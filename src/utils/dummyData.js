@@ -1,5 +1,6 @@
 const getRandomImage = gender => {
   const num = Math.floor(Math.random() * 99) + 1;
+  console.log('+++++++++',num)
   return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`;
 };
 
@@ -11,7 +12,7 @@ export const user = {
   photo: getRandomImage('men'),
 };
 
-export const peopleData = [
+export const  peopleData = [
   {
     name: 'Alice',
     speaking: true,

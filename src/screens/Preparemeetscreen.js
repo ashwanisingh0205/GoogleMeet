@@ -132,9 +132,10 @@ const Preparemeetscreen = () => {
         ?.join(', ');
 
         const count = participants.length > 2 ? `and ${participants.length - 2} others` : '';
-        return `${names}${count}in the call`;
+        return `${names}${count} in the call`;
 
       };
+      console.log('------',localStream)
     
 
   return (
@@ -161,7 +162,7 @@ const Preparemeetscreen = () => {
                 <RTCView
                 streamURL={localStream?.toURL()}
                 style={prepareStyles?.localVideo}
-                mirror={true}
+                mirror
                 objectFit={'cover'}
                 />
               ) : (
