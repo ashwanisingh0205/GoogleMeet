@@ -9,10 +9,10 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { useUserstore } from '../../../service/userStore';
 
 const MeetFooter = ({toggleMic,toggleVideo}) => {
-    const {removeSession}=useUserstore();
+   
     //  const {sessionId}=LiveStore();
-  const {micOn,videoOn,sessionId,removeSessionId}=LiveStore();
-  console.log('session',sessionId)
+  const {micOn,videoOn}=LiveStore();
+  
   // const cancel=()=>{
   //   removeSessionId(sessionId)
   //   removeSession(sessionId)
@@ -33,7 +33,7 @@ const MeetFooter = ({toggleMic,toggleVideo}) => {
     <View style={footerStyles.iconContainer}>
       <TouchableOpacity
       style={footerStyles.callEndButton}
-      onPress={goBack()}>
+      onPress={()=>goBack()}>
         <PhoneOff color={'white'} size={RFValue(16)}/>
        </TouchableOpacity>
        <TouchableOpacity style={getIconStyle(videoOn)}

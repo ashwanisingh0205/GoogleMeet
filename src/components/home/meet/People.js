@@ -8,7 +8,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 const People = ({people,containerDimension}) => {
   const maxVisibleUsers=8;
   const visiblePeople=people.slice(0,maxVisibleUsers);
-  const othersCount=people.length > maxVisibleUsers ? people.length-maxVisibleUsers : 0;
+  const othersCount=people?.length > maxVisibleUsers ? people.length-maxVisibleUsers : 0;
  console.log('people',people.length);
   const gridStyle = containerDimension ?
    getGridStyle(visiblePeople?.length,containerDimension.width,containerDimension.height) : {};

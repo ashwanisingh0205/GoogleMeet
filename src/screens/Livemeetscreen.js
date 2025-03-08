@@ -7,7 +7,7 @@ import UserView from '../components/home/meet/UserView';
 import People from '../components/home/meet/People';
 import NoUserInvite from '../components/home/meet/NoUserInvite';
 import MeetFooter from '../components/home/meet/MeetFooter';
-import { peopleData } from '../utils/dummyData';
+// import { peopleData } from '../utils/dummyData';
 
 const Livemeetscreen = () => {
   const {participants,localStream,toggleMic,toggleVideo,switchCamera}=useWebRtc();
@@ -22,7 +22,7 @@ const Livemeetscreen = () => {
           containerDimension={containerDimension}/>
         )
       }
-      {peopleData?.length>0 ? (
+      {participants?.length>0 ? (
         <People
         people={participants}
         containerDimension={containerDimension}
