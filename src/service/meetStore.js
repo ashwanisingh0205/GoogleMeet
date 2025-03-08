@@ -11,11 +11,11 @@ import { ToggleLeft } from 'lucide-react-native';
             chatMessages:[],
             micOn:false,
             videoOn:false,
-            clear:()=>
-                set({
-                    sessionId:null,
-                    participants:[]
-                }),
+            // clear:()=>
+            //     set({
+            //         sessionId:null,
+            //         participants:[]
+            //     }),
 
             addSessionId:id=>{  //this function is used to add the session ID
                 set({sessionId:id});  //this function is used to set the session ID

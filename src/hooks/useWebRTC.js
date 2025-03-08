@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useRef, use} from 'react';
+import React, {useState,useEffect,useRef} from 'react';
 import {RTCPeerConnection,RTCSessionDescription,RTCIceCandidate,mediaDevices,MediaStream} from 'react-native-webrtc';
 import { useWs } from '../service/api/WSprovider';
 import {LiveStore} from '../service/meetStore';
@@ -6,7 +6,7 @@ import {useUserstore} from '../service/userStore';
 import { peerConstraints } from '../utils/Helpers';
 
  export const useWebRtc = () => {
-    const {addSessionId,removeSessionId,addParticipant,removeParticipant,micOn,videoOn,participants,setStreamURL,sessionId,updateParticipant,toggle,clear} = LiveStore();
+    const {addSessionId,addParticipant,removeParticipant,micOn,videoOn,participants,setStreamURL,sessionId,updateParticipant,toggle,clear} = LiveStore();
     const {user} = useUserstore();
     const {emit,on,off} = useWs();
     const [localStream,setLocalStream] = useState(null);
@@ -16,8 +16,9 @@ import { peerConstraints } from '../utils/Helpers';
  const startLocalStream = async()=>{
     try {
         const mediastream = await mediaDevices.getUserMedia({
-            video:true,
             audio:true,
+            video:true,
+            
         });
         setLocalStream(mediastream);
         } catch (error) {
@@ -53,7 +54,7 @@ const establishPeerConnections = async()=>{
             };
 
             //Sends these tracks to the remote peer.
-            localStream?.getTracks().forEach((track)=>{
+            localStream?.getTracks().forEach(track =>{
                 peerConnection.addTrack(track,localStream);
             });
             try {
@@ -78,19 +79,24 @@ const joiningStream = async()=>{
     establishPeerConnections();
 
 };
-useEffect(()=>{
-    if(localStream){
+useEffect(() => {
+    if (localStream) {
         joiningStream();
     }
-},[localStream]);
-useEffect(()=>{
-    startLocalStream();
-if(localStream){
-    return()=>{
-        localStream?.getTracks()?.forEach(track=>track.stop());
+}, [localStream]);
+
+useEffect(() => {
+    const startStream = async () => {
+        await startLocalStream();
+        if (localStream) {
+            return () => {
+                localStream.getTracks()?.forEach(track => track.stop());
+            };
+        }
     };
-}
-},[]);
+
+    startStream();
+}, []);
 
 useEffect(()=>{
 
@@ -102,7 +108,7 @@ useEffect(()=>{
         on('participant-left', handleParticipantLeft);
         on('participant-update', handleParticipantUpdate);
         return ()=>{
-            localStream?.getTracks()?.forEach(track=>track.stop());
+            localStream?.getTracks().forEach(track=>track.stop());
             peerConnections.current.forEach(pc => pc.close());
             peerConnections.current.clear();
             addSessionId(null);
@@ -117,13 +123,13 @@ useEffect(()=>{
         };
 
     }
-},[localStream]);
-const handleNewParticipant = (participant)=>{
-    if(participants?.userId === user?.id) {return;}
+}, [localStream]);
+const handleNewParticipant = participant=>{
+    if(participant?.userId === user?.id) return;
     addParticipant(participant);
 };
 const handleReceiveOffer = async({sender,receiver,offer})=>{
-    if(receiver !== user?.id) {return;}
+    if(receiver !== user?.id) return;
 
     try {
         let peerConnection = peerConnections.current.get(sender);
@@ -180,7 +186,7 @@ const handleReceiveOffer = async({sender,receiver,offer})=>{
 };
 
 const handleReceiveAnswer = async({sender,receiver,answer})=>{
-    if(receiver !== user?.id) {return;}
+    if(receiver !== user?.id) return;
     try {
         const peerConnection = peerConnections.current.get(sender);
         if(peerConnection){
@@ -191,8 +197,8 @@ const handleReceiveAnswer = async({sender,receiver,answer})=>{
     }
 };
 const handleReceiveIceCandidate = async({sender,receiver,candidate})=>{
-    if(receiver !== user?.id) {return;}
-    try {
+    if(receiver !== user?.id) return;
+    
         const peerConnection = peerConnections.current.get(sender);
         if(peerConnection){
             await peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
@@ -202,12 +208,10 @@ const handleReceiveIceCandidate = async({sender,receiver,candidate})=>{
             }
             pendingCandidates.current.get(sender).push(candidate);
         }
-    } catch (error) {
-        console.log('error handling ice candidate',error);
-    }
+    
 };
 
-const handleParticipantLeft = ({userId})=>{
+const handleParticipantLeft = userId=>{
     removeParticipant(userId);
     const pc = peerConnections.current.get(userId);
     if(pc){

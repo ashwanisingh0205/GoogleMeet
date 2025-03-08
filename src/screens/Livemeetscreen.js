@@ -22,7 +22,7 @@ const Livemeetscreen = () => {
           containerDimension={containerDimension}/>
         )
       }
-      {participants?.length>0 ? (
+      {participants?.length > 0 ? (
         <People
         people={participants}
         containerDimension={containerDimension}

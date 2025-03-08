@@ -33,7 +33,7 @@ const MeetFooter = ({toggleMic,toggleVideo}) => {
     <View style={footerStyles.iconContainer}>
       <TouchableOpacity
       style={footerStyles.callEndButton}
-      onPress={()=>goBack()}>
+      onPress={goBack}>
         <PhoneOff color={'white'} size={RFValue(16)}/>
        </TouchableOpacity>
        <TouchableOpacity style={getIconStyle(videoOn)}
