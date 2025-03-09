@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useWebRtc } from '../hooks/useWebRTC'
 import { useContainerDimension } from '../hooks/useContainerDimension';
@@ -14,6 +14,7 @@ const Livemeetscreen = () => {
   const {containerDimension,onContainerLayout}=useContainerDimension();
   return (
     <View style={styles.container}>
+      <SafeAreaView/>
       <MeetHeader   containerDimension={containerDimension} switchCamera={switchCamera}/>
       <View style={styles.containers} onLayout={onContainerLayout}>
         {localStream && containerDimension && (
