@@ -16,8 +16,9 @@ import { peerConstraints } from '../utils/Helpers';
  const startLocalStream = async()=>{
     try {
         const mediastream = await mediaDevices.getUserMedia({
-            video:true,
             audio:true,
+            video:true,
+            
           
             
         });
