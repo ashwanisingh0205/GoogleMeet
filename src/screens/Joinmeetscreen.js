@@ -69,7 +69,7 @@ const Joinmeetscreen = () => {
       </LinearGradient>
         <Text style={joinStyles.orText}>Or</Text>
         <View style={joinStyles.inputContainer}>
-          <Text style={joinStyles.labelText}>Enter the code provided by the Meeting Host</Text>
+          <Text style={joinStyles.labelText}>Enter the code provided by the Meeting Host!! </Text>
           <TextInput style={joinStyles.inputBox} 
           value={code}
           onChangeText={setCode}
