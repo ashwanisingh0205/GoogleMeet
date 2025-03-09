@@ -40,6 +40,7 @@ const People = ({people,containerDimension}) => {
             {person?.photo ? (
               <Image source={{ uri: person?.photo }} style={peopleStyles.image} />
             ) : (
+              
               <Text style={peopleStyles.initial}>
                 {person?.name?.charAt(0)}
               </Text>

@@ -78,7 +78,7 @@ const establishPeerConnections = async()=>{
 
 };
 const joiningStream = async()=>{
-    establishPeerConnections();
+   await establishPeerConnections();
 
 };
 useEffect(() => {
@@ -158,13 +158,13 @@ const handleReceiveOffer = async({sender,receiver,offer})=>{
                 }
             };
             if(pendingCandidates.current.has(sender)){
-                pendingCandidates.current.get(sender).forEach(candidate=>{
-                    peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
+                pendingCandidates.current.get(sender).forEach(async candidate=>{
+                   await peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
                 });
                 pendingCandidates.current.delete(sender);
             }
             if(localStream){
-                localStream?.getTracks().forEach(track=>{
+                localStream.getTracks().forEach(track=>{
                     peerConnection.addTrack(track,localStream);
                 });
             }
