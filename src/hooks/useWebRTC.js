@@ -16,8 +16,9 @@ import { peerConstraints } from '../utils/Helpers';
  const startLocalStream = async()=>{
     try {
         const mediastream = await mediaDevices.getUserMedia({
-            audio:true,
             video:true,
+            audio:true,
+          
             
         });
         setLocalStream(mediastream);
@@ -86,16 +87,15 @@ useEffect(() => {
 }, [localStream]);
 
 useEffect(() => {
-    const startStream = async () => {
-        await startLocalStream();
+  
+         startLocalStream();
         if (localStream) {
             return () => {
-                localStream.getTracks()?.forEach(track => track.stop());
+                localStream?.getTracks().forEach(track => track.stop());
             };
         }
-    };
+   
 
-    startStream();
 }, []);
 
 useEffect(()=>{
@@ -163,7 +163,7 @@ const handleReceiveOffer = async({sender,receiver,offer})=>{
                 pendingCandidates.current.delete(sender);
             }
             if(localStream){
-                localStream.getTracks().forEach(track=>{
+                localStream?.getTracks().forEach(track=>{
                     peerConnection.addTrack(track,localStream);
                 });
             }
@@ -238,7 +238,7 @@ const toggleMic = ()=>{
 };
 const toggleVideo = ()=>{
     if(localStream){
-        localStream.getVideoTracks().forEach(track=>{
+        localStream?.getVideoTracks().forEach(track=>{
             videoOn ? track.enabled = false : track.enabled = true;
         });
     }
