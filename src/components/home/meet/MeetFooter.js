@@ -13,11 +13,11 @@ const MeetFooter = ({toggleMic,toggleVideo}) => {
     //  const {sessionId}=LiveStore();
   const {micOn,videoOn,sessionId,removeSessionId}=LiveStore();
   
-  const cancel=()=>{
-    removeSessionId(sessionId)
-    removeSession(sessionId)
-    goBack()
-  }
+  // const cancel=()=>{
+  //   removeSessionId(sessionId)
+  //   removeSession(sessionId)
+  //   goBack()
+  // }
 
   const getIconStyle=isActive=>({
     backgroundColor:isActive? ('rgba(255,255,255,0.1)'):('#ffffff'),
@@ -33,7 +33,7 @@ const MeetFooter = ({toggleMic,toggleVideo}) => {
     <View style={footerStyles.iconContainer}>
       <TouchableOpacity
       style={footerStyles.callEndButton}
-      onPress={cancel}>
+      onPress={goBack}>
         <PhoneOff color={'white'} size={RFValue(16)}/>
        </TouchableOpacity>
        <TouchableOpacity style={getIconStyle(videoOn)}

@@ -74,15 +74,15 @@ import { ToggleLeft } from 'lucide-react-native';
                 set(state=>({videoOn:!state.videoOn}))  //this function is used to toggle the video on
             }
         },
-        clear: () => {  //this function is used to clear the store
-            set({
-                sessionId: null,  //this function is used to set the session ID to null
-                participants: [],  //this function is used to set the participants to an empty array
-                chatMessages: [],  //this function is used to set the chat messages to an empty array
-                micOn: false,  //this function is used to set the mic on to false
-                videoOn: false,  //this function is used to set the video on to false
-            })
-        }
+        // clear: () => {  //this function is used to clear the store
+        //     set({
+        //         sessionId: null,  //this function is used to set the session ID to null
+        //         participants: [],  //this function is used to set the participants to an empty array
+        //         chatMessages: [],  //this function is used to set the chat messages to an empty array
+        //         micOn: false,  //this function is used to set the mic on to false
+        //         videoOn: false,  //this function is used to set the video on to false
+        //     })
+        // }
     }),
         {
             name:'live-storage',

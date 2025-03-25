@@ -97,7 +97,7 @@ console.log('+++++++++++',localStream)
                        <RTCView
                        streamURL={localStream?.toURL()}
                        style={styles.localVideo}
-                    //    mirror={true}
+                       mirror
                        objectFit={'cover'}
                        />
     ):(

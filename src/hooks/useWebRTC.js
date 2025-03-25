@@ -16,11 +16,9 @@ import { peerConstraints } from '../utils/Helpers';
  const startLocalStream = async()=>{
     try {
         const mediastream = await mediaDevices.getUserMedia({
-            audio:true,
-            video:true,
-            
-          
-            
+            video: true, 
+            audio: true,
+             
         });
         setLocalStream(mediastream);
         } catch (error) {
@@ -33,8 +31,10 @@ const establishPeerConnections = async()=>{
         if(!peerConnections.current.has(streamUser?.userId)){
             const peerConnection = new RTCPeerConnection(peerConstraints);
             peerConnections.current.set(streamUser?.userId,peerConnection);
+              
 
 
+           
                 //The remote peer receives & plays the media.
             peerConnection.ontrack = event=>{
                 const remoteStream = new MediaStream();
@@ -55,10 +55,19 @@ const establishPeerConnections = async()=>{
                 }
             };
 
-            //Sends these tracks to the remote peer.
-            localStream?.getTracks().forEach(track =>{
-                peerConnection.addTrack(track,localStream);
-            });
+
+         //Sends these tracks to the remote peer.
+              if(localStream){
+                localStream?.getTracks().forEach(track =>{
+                    peerConnection.addTrack(track,localStream);
+                });
+
+              }
+             
+           
+
+
+            
             try {
                 const offerDescription = await peerConnection.createOffer();
                 await peerConnection.setLocalDescription(offerDescription);
@@ -85,7 +94,7 @@ useEffect(() => {
     if (localStream) {
         joiningStream();
     }
-}, [localStream]);
+},[localStream]);
 
 useEffect(() => {
   
@@ -95,9 +104,7 @@ useEffect(() => {
                 localStream?.getTracks().forEach(track => track.stop());
             };
         }
-   
-
-}, []);
+},[]);
 
 useEffect(()=>{
 
@@ -158,8 +165,8 @@ const handleReceiveOffer = async({sender,receiver,offer})=>{
                 }
             };
             if(pendingCandidates.current.has(sender)){
-                pendingCandidates.current.get(sender).forEach(async candidate=>{
-                   await peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
+                pendingCandidates.current.get(sender).forEach(candidate=>{
+                    peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
                 });
                 pendingCandidates.current.delete(sender);
             }

@@ -2,7 +2,7 @@ import { Alert, FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity, View
 import React from 'react'
 import { homeStyles } from '../styles/homeStyles'
 import HomeHeader from '../components/home/HomeHeader'
-import {Calendar, Menu, Video} from 'lucide-react-native'
+import {Calendar, CloudHail, Menu, Video} from 'lucide-react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { useUserstore } from '../service/userStore'
 import { navigate } from '../utils/NavigationUtils'
@@ -30,6 +30,7 @@ const {addSessionId,removeSessionId}=LiveStore();
   };
   const joinviasessionid=async(id)=>{  //this function is used to join the meeting via session id
     const storename=user?.name;
+    // console.log('id----',id)
     if(!storename){
       // setVisible(true);
       Alert.alert('fill the data ')
@@ -37,9 +38,10 @@ const {addSessionId,removeSessionId}=LiveStore();
     }
     const avialable= await checkesession(id)  //this function is used to check if the session is available  
     if(avialable){
+      // console.log('id kya hain',id)
       emit('prepare',{  //this function is used to emit the prepare event
         userId:user?.id,  //sends the user ID to identify who is joining
-        sessionsId:removeHyphens(id)  //sends the session ID without hyphens to match server format
+        sessionsId:id  //sends the session ID without hyphens to match server format
       })
       addSession(id)  //this function is used to add the session
       addSessionId(id)  //this function is used to add the session id
@@ -52,6 +54,7 @@ const {addSessionId,removeSessionId}=LiveStore();
       Alert.alert('There is no meeting')  //this function is used to alert the user that there is no meeting
     }
   }
+  
   const rendersession=({item})=>{
    return(
     <View style={homeStyles.sessionContainer}>
@@ -68,6 +71,7 @@ const {addSessionId,removeSessionId}=LiveStore();
     </View>
    )
   }
+  console.log(sessions)
   return (
     <View style={homeStyles.container}>
       <HomeHeader/>

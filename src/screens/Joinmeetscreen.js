@@ -29,11 +29,12 @@ const Joinmeetscreen = () => {
     }
   }
   const joinviasessionid=async()=>{
-    const isAvailable=await checkesession(code)
+    const isAvailable=await checkesession(removeHyphens(code))
+    console.log('code ye hain',code)
     if(isAvailable){
      emit('prepare-session',{
       userId:user?.id,
-      sessionId:removeHyphens(code)
+      sessionId:(code)
      })
    
     addSession(code)

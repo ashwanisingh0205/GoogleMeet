@@ -27,11 +27,13 @@ const InquiryModal = ({visible,onclose}) => {
         profile,
       });
       onclose();
+      // console.log(user)
     }
     else{
       Alert.alert('please fill the form sir');
     }
   };
+  console.log('user data',user)
   return (
     <Modal
     visible={visible}
@@ -51,8 +53,8 @@ const InquiryModal = ({visible,onclose}) => {
     enabled
     >
       <ScrollView contentContainerStyle={[
-        inquiryStyles.scrollViewContent,
-        // { flexGrow: 1, justifyContent: 'flex-end' }
+        
+        { flexGrow: 1, justifyContent: 'flex-end'}
       ]}>
         <View style={inquiryStyles.modalContent}>
           <Text style={inquiryStyles.title}>Enter the Input</Text>

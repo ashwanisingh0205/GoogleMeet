@@ -33,6 +33,7 @@ const Preparemeetscreen = () => {
   useEffect(()=>{
     const handleparticipantupdata = updateparticipant=>{
       setParticipants(updateparticipant?.participants);
+      // console.log('updateparticipant',participants)
     };
     on('session-info',handleparticipantupdata);
    return ()=>{
@@ -162,7 +163,7 @@ const Preparemeetscreen = () => {
                 <RTCView
                 streamURL={localStream?.toURL()}
                 style={prepareStyles?.localVideo}
-                mirror
+                // mirror={false}
                 objectFit={'cover'}
                 />
               ) : (

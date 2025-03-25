@@ -30,10 +30,12 @@ const People = ({people,containerDimension}) => {
       >
         {person?.videoOn && person?.streamURL?.toURL() ? (
           <RTCView
-            mirror
+            
             objectFit="cover"
             streamURL={person?.streamURL?.toURL()}
             style={peopleStyles.rtcVideo}
+            mirror={false}
+
           />
         ) : (
           <View style={peopleStyles.noVideo}>
